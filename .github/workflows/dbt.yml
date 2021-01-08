@@ -18,6 +18,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - uses: actions/mwhitaker/dbt-action@v0.1.3
+      - uses: mwhitaker/dbt-action@v0.1.3
       - run: dbt run
       - run: dbt test
