@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
   pull_request_target:
 env:
-  DBT_PROFILES_DIR: C:/Users/HOME/
+  DBT_PROFILES_DIR: C:/Users/HOME/.dbt/
   DBT_GOOGLE_PROJECT: demoproject-301108
   DBT_GOOGLE_BIGQUERY_DATASET: demoproject-301108:demo_dataset
   DBT_GOOGLE_BIGQUERY_KEYFILE: demoproject-301108-8142ac59f026.json
