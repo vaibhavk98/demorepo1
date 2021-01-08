@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  DBT_PROFILES_DIR: C:/Users/HOME/.dbt/profiles.yml
+  DBT_PROFILES_DIR: ./
   DBT_GOOGLE_PROJECT: demoproject-301108
   DBT_GOOGLE_BIGQUERY_DATASET: demoproject-301108:demo_dataset
   DBT_GOOGLE_BIGQUERY_KEYFILE: .github/workflows/demoproject-301108-8142ac59f026.json
