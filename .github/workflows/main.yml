@@ -24,8 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
+      - uses: actions/python-versions
+      - name: dbt installation
+        run: pip install dbt
       - name: DBT Run
         run: dbt run
       - name: DBT Test
