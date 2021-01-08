@@ -41,6 +41,6 @@ jobs:
         env:
           KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
       - name: DBT Run
-        run: dbt run --profiles-dir ./.dbt/
+        run: dbt run
       - name: DBT Test
         run: dbt test
