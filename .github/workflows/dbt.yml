@@ -13,8 +13,6 @@ env:
 
 jobs:
   dbt:
-    name: dbt action
-      uses: mwhitaker/dbt-action@v0.1.3
     name: dbt
     runs-on: ubuntu-latest
 
