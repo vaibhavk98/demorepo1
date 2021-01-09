@@ -30,7 +30,7 @@ jobs:
       - name: dbt action
         uses: mwhitaker/dbt-action@v0.1.3
         with:
-          dbt_command: "dbt run"
+          dbt_command: "dbt run --profiles-dir ./"
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
 
