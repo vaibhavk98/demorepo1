@@ -10,6 +10,6 @@ default:
       keyfile: ./creds.json
       threads: 4
       timeout_seconds: 600
-      location: US # Optional, one of US or EU
+      location: asia-south1 # Optional, one of US or EU
       priority: interactive
       retries: 1
