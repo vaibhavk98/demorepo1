@@ -1,29 +1,15 @@
 default:
+  target: dev
   outputs:
 
     dev:
       type: bigquery
       method: service-account
-      project: bicycle-health-1538682551737
-      schema: cymetrix_test # You can also use "schema" here
+      project: demoproject-301108
+      dataset: demo_dataset
+      keyfile: ./creds.json
       threads: 4
-      keyfile: C:\Users\HOME\keyfile.json
       timeout_seconds: 600
-      location: US # Optional, one of US or EU
+      location: asia-south1 # Optional, one of US or EU
       priority: interactive
       retries: 1
-
-    prod: # Keypair config
-      type: snowflake
-      account: [account id + region (if applicable)]
-      user: [username]
-      role: [user role]
-      private_key_path: [path/to/private.key]
-      private_key_passphrase: [passphrase for the private key, if key is encrypted]
-      database: [database name]
-      warehouse: [warehouse name]
-      schema: [dbt schema]
-      threads: [1 or more]
-      client_session_keep_alive: False
-  
-  target: dev

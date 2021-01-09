@@ -46,4 +46,8 @@ jobs:
         with:
           dbt_command: "dbt run --models my_second_dbt_model --profiles-dir ./"
         env:
+<<<<<<< HEAD
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+=======
+          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+>>>>>>> 118caaa32eeac9b29fb9fae8f7a5c318baee45c9
