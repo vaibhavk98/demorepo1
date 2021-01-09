@@ -7,7 +7,6 @@ default:
       method: service-account
       project: demoproject-301108
       dataset: demo_dataset
-      keyfile: C:/Users/HOME/demoproject-301108-8142ac59f026.json
       threads: 4
       timeout_seconds: 600
       location: US # Optional, one of US or EU
