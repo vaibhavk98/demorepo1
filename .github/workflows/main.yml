@@ -13,12 +13,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   pull_request_target:
-env:
-  DBT_PROFILES_DIR: ./
-  DBT_GOOGLE_PROJECT: demoproject-301108
-  DBT_GOOGLE_BIGQUERY_DATASET: demoproject-301108:demo_dataset
-  DBT_GOOGLE_BIGQUERY_KEYFILE: demoproject-301108-8142ac59f026.json
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -33,11 +27,6 @@ jobs:
       - uses: actions/setup-python@v2
         with:
          python-version: '3.8'
-      - name: dbt installation
-        run: pip install dbt
-      - name: keyfile running
-        run: 'cat C:/Users/HOME/keyfile.json'
-      - name: DBT Run
-        run: dbt run
-      - name: DBT Test
-        run: dbt test
+      - name: dbt action
+        uses: mwhitaker/dbt-action@v0.1.3
+
