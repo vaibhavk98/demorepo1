@@ -36,7 +36,7 @@ jobs:
       - name: dbt installation
         run: pip install dbt
       - name: keyfile running
-        run: 'echo ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}'
+        run: 'echo C:/Users/HOME/demoproject-301108-8142ac59f026.json'
       - name: DBT Run
         run: dbt run
       - name: DBT Test
