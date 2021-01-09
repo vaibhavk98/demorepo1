@@ -1,4 +1,5 @@
 default:
+  target: dev
   outputs:
 
     dev:
@@ -12,5 +13,3 @@ default:
       location: US # Optional, one of US or EU
       priority: interactive
       retries: 1
-
-  target: dev
