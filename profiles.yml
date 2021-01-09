@@ -12,18 +12,5 @@ default:
       location: US # Optional, one of US or EU
       priority: interactive
       retries: 1
-	
 
-      #keyfile_json:
-       # type: service_account
-        #project_id: demoproject-301108
-        #private_key_id: 8142ac59f0262f44cb936221d2fab892c3ee9858
-        #private_key: -----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCy5eXPJ8l6kWr3\nqpBT4yGsXz6OcsKHSYvUPbHVHP8/fMey0F+Dfk66P/LdM4fbiddUfA1q0Jp8ZPaW\nBuEYToZ2FwcOUUGIeDro77yUNYd6XHvXAlTOn5HCQwUXAV27b4i2Cwzw6HmI0vYB\nBX6jpRDBzCocN2NPtxWRkbjKSMv5xKozZdYhPzlaebuC/MYcB/NX5BjN53yb5I2s\nnTFDX+8utpL5i9RFFv7eUmLew7MrXK8Uhe4CS+MSkVbnDbAomM2LP1Wf589coUrj\n3JA0KT4rq1j77DKUEAbMh57YceujLUwpUTg1hbjFDGgmQoFRXjP3+MZg7FDQiKyH\nmVQ05EydAgMBAAECggEAU+uCdT3NxsBmdE2/rIpUpn57Yuk0lbALdwGF5VnX5tlK\n+HfFBnL+zWHoNJnStkqgB1K2HJBEl+vovJH3j6ZubwD4X2AApNr5j4G+bav6pIyz\nzzWZwN+byYwU3CjY5m84q2TdqjjzohqMKgiA0pVBGhgC/P+Ch8dzx7ia/dFOVhh/\nro3RDe62524RDWfaKq+EQcZI8Dd8gbRM401boGILjmX1ybmVKf1F4VL29m1ldOJb\nLlRh66+gS42zjKR+aTDhKJ9RF43/qaYF9yjshwdLN3bnG8OxpBeSrJeBTSVvWLRC\nFY/+4jfCIMGCqNfdeFUAUJBQSyZ2Lkf59ZMiO9QGhQKBgQD1fD3nBRtf5gLu8c+Q\nDSigJfpS3UePzPZHH3youc3LFkuhrun2Z4801s78BPsoDbpN0X0vmhVjaolWfaIQ\n6ejsAp0WD2OjrUbweSET/r3eNwDbQuyv5pD8mpxewwYkCqublrZftM8p8tvQsutA\nxn1dxpz0z/U9yDby2/ejUO+l1wKBgQC6j4Xu/tSgdGoSPowvbv6kyA35NssrgoGa\nHfVQ+QpGzI23B4mrRgHD/tzbflLoT3CzLZqVHunIAC6UiAfL3TUlHL5yPGluNo3o\n01A1tBngHsAJb/79pVE3viu4OL0KK3MrRiLuiNXD1d11bnCsEZTySsSKmU+Y032m\nEnqUh1bqqwKBgQDDxoPvvAjq4BsyyLJKJdRidCdA8qxhqIo4ion2Xcgb0PocRczc\n8BYrg6yrHKXYeao86Xc3AWFRWeORkLwxVPqnTiZNM5S5MjXDDjctJRnzIFaUhrkQ\nR4cVjZBrmolJMSFPAlEL3rzgrYhU1nv7utC8eust6rOgxA3efULvglq9HQKBgEAq\njyllkqJhh/4gbzz9Uy4/9LZrxzN+3q6wcSjZj1RMlM2IFSzIlmDgLvx7lW57rEqk\ne8+gY0476cmChBP1UIskOMi3yJd0whh7XdIq0N+KFAjq8WwySR4AFa92LGbsDN+s\nbuVWQRfrXhE+3BgCsBUp7DGzi3IIA+Zz4p9lcVqjAoGBAPNdjxWcdXvqWngmJy0v\nzILcYJWu3o7bkMgYVipK4mmeanMisK4PaZN4t48qDD0GPFe8C8IWM7ukNGGAn2zD\nZ6MUDVjBU4+N4UcFPMzaCHxRvMSCeGFf0rm4Ccj0wHIORQAQYW7ij7yB1DngWT1d\np4gPrloh7ebySvO94RRRG5W/\n-----END PRIVATE KEY-----\n
-        #client_email: vaibhavkulkarni@demoproject-301108.iam.gserviceaccount.com
-        #client_id: 111539253772402383781
-        #auth_uri: https://accounts.google.com/o/oauth2/auth
-        #token_uri: https://oauth2.googleapis.com/token
-        #auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs
-        #client_x509_cert_url: https://www.googleapis.com/robot/v1/metadata/x509/vaibhavkulkarni%40demoproject-301108.iam.gserviceaccount.com
-  
   target: dev
