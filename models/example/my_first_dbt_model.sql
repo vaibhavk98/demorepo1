@@ -11,7 +11,9 @@
 
 with source_data as (
 
-    select 1 as id
+    select 
+    1 as id,
+    current_timestamp as insert_on
     {# union all
     select null as id #}
 
