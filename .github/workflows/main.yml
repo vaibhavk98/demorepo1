@@ -36,6 +36,7 @@ jobs:
       - name: dbt installation
         run: pip install dbt
       - name: keyfile running
+        run: 'echo $KEYFILE'
         env:
           KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
       - name: DBT Run
