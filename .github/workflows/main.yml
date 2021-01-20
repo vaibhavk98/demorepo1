@@ -1,7 +1,7 @@
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ testbranch ]
 #   pull_request:
 #     branches: [ master ]
 #   schedule:
@@ -53,20 +53,34 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+<<<<<<< HEAD
       - uses: actions/checkout@v2
         with:
           ref: testbranch
       - uses: actions/setup-python@v2
+=======
+      - name: Checkout testbranch
+        id: chktestbranch
+        uses: actions/checkout@v2
+        with:
+          ref: testbranch
+      - name: Setup Python
+        id: setuppython
+        uses: actions/setup-python@v2
+>>>>>>> testbranch
         with:
          python-version: '3.8'
       - name: dbt-action
+        id: dbttest
         uses: mwhitaker/dbt-action@v0.1.3
         with:
           dbt_command: "dbt test --data --profiles-dir ./"
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
-      - name: Get the result
-        if: ${{ always() }}
-        run: echo "${{ steps.dbt-action.outputs.result }}" | cat > ./logit.txt
-        shell: bash
-        
+      - name: Merge branch if test is successful
+        if: success()
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          target_branch: master
+          github_token: ${{ github.token }}
