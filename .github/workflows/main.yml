@@ -62,4 +62,9 @@ jobs:
         with:
           dbt_command: "dbt test --data --profiles-dir ./"
         env:
+<<<<<<< HEAD
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+=======
+          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+        
+>>>>>>> a3ade8b2c005e5a809d6480477aa2a5553cd5e0c
