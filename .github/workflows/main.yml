@@ -55,7 +55,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout testbranch
         id: chktestbranch
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           ref: testbranch
       - name: Setup Python
@@ -65,13 +65,13 @@ jobs:
          python-version: '3.8'
       - name: dbt-action
         id: dbttest
-        uses: mwhitaker/dbt-action@v0.1.3
+      - uses: mwhitaker/dbt-action@v0.1.3
         with:
           dbt_command: "dbt test --data --profiles-dir ./"
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
       - name: Merge branch if test is successful
         if: ${{ steps.dbttest.outputs.status == 'success' }}
-        run: echo "Successful!! Ready to MERGE!"
+      - run: echo "Successful!! Ready to MERGE!"
         shell: bash
         
