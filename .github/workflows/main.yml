@@ -65,6 +65,6 @@ jobs:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
       - name: Get the result
         if: ${{ always() }}
-        run: echo "${{ steps.dbt-action.outputs.result }}" > logit.txt
+        run: echo "${{ steps.dbt-action.outputs.result }}" | cat > logit.txt
         shell: bash
         
