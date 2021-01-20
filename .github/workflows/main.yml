@@ -72,7 +72,4 @@ jobs:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
       - name: Merge branch if test is successful
         if: success()
-        uses: actions/checkout@v2
-        with:
-          ref: master
-          command: "git merge testbranch"
+        run: git checkout master && git merge testbranch
