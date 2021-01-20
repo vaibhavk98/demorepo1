@@ -71,7 +71,7 @@ jobs:
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
       - name: Merge branch if test is successful
-        if: steps.dbttest.outputs.status != 'success'
+        if: steps.dbttest.outputs.exit_code == 1
         run: echo "Failed!!"
         shell: bash
         
