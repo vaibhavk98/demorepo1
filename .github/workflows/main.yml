@@ -74,7 +74,7 @@ jobs:
         id: dbttest
         uses: mwhitaker/dbt-action@v0.1.3
         with:
-          dbt_command: "dbt test --data --profiles-dir ./"
+          dbt_command: "dbt test --profiles-dir ./"
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
       - name: Merge branch if test is successful
