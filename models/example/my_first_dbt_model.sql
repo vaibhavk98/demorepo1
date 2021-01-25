@@ -13,6 +13,7 @@ with source_data as (
 
     select 
     1 as id,
+    'abcd' as name,
     current_timestamp as insert_on
     {# union all
     select null as id #}
