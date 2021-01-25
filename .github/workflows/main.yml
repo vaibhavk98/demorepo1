@@ -86,8 +86,8 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465
           # user credentials
-          username: ${{ github.user }}
-          password: ${{ github.password }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
           # email subject
           subject: Workflow Status
           # email body as text
