@@ -1,1 +1,1 @@
-SELECT * FROM {{ source('demo_dataset', 'my_first_dbt_model') }} A WHERE A.id IS NOT NULL
+SELECT * FROM {{ source('demo_dataset', 'my_first_dbt_model') }} A WHERE A.id IS NULL

@@ -6,3 +6,10 @@ sources:
     tables:
         - name: my_first_dbt_model
         - name: my_second_dbt_model
+models:
+  - name: my_first_dbt_model
+    columns:
+      - name: name
+        tests:
+           - accepted_values:
+              values: [''] 
