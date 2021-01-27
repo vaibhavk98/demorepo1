@@ -5,66 +5,37 @@ on:
 #   pull_request:
 #     branches: [ master ]
 #   schedule:
-#     - cron: '0/4 * * * *' # Runs after every 4 mins.
+#     - cron: '0/4    ' # Runs after every 4 mins.
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   pull_request_target:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-#   model1:
-#     # The type of runner that the job will run on
-#     runs-on: ubuntu-latest
-
-#     # Steps represent a sequence of tasks that will be executed as part of the job
-#     steps:
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - uses: actions/checkout@v2
-#       - uses: actions/setup-python@v2
-#         with:
-#          python-version: '3.8'
-#       - name: dbt action
-#         uses: mwhitaker/dbt-action@v0.1.3
-#         with:
-#           dbt_command: "dbt run --models my_first_dbt_model --profiles-dir ./"
-#         env:
-#           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
-  
-#   model2:
-#     runs-on: ubuntu-latest
-#     needs: [model1]
-#     # Steps represent a sequence of tasks that will be executed as part of the job
-#     steps:
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - uses: actions/checkout@v2
-#       - uses: actions/setup-python@v2
-#         with:
-#          python-version: '3.8'
-#       - name: dbt action
-#         uses: mwhitaker/dbt-action@v0.1.3
-#         with:
-#           dbt_command: "dbt run --models my_second_dbt_model --profiles-dir ./"
-#         env:
-#           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
-
 
   testing:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout testbranch
+      - name: Checkout test
         id: chktestbranch
         uses: actions/checkout@v2
         with:
-          ref: testbranch
+          ref: test
       - name: Setup Python
         id: setuppython
         uses: actions/setup-python@v2
         with:
          python-version: '3.8'
-      - name: dbt-action
+      - name: dbt-run
+        id: dbtrun
+        uses: mwhitaker/dbt-action@v0.1.3
+        with:
+          dbt_command: "dbt run --profiles-dir ./"
+        env:
+          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+      - name: dbt-test
         id: dbttest
         uses: mwhitaker/dbt-action@v0.1.3
         with:
@@ -76,23 +47,6 @@ jobs:
         uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
+          command: git merge -s recursive -X subtree=dist master
           target_branch: master
           github_token: ${{ github.token }}
-      - name: Send mail
-        if: always()
-        uses: dawidd6/action-send-mail@v2
-        with:
-          # mail server settings
-          server_address: smtp.gmail.com
-          server_port: 465
-          # user credentials
-          username: ${{ secrets.GMAIL_ADDRESS }}
-          password: ${{ secrets.GMAIL_PASSWORD }}
-          # email subject
-          subject: Workflow Status
-          # email body as text
-          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
-          # comma-separated string, send email to
-          to: ${{ secrets.GMAIL_ADDRESS }}
-          # from email name
-          from: ${{ secrets.GMAIL_ADDRESS }}
