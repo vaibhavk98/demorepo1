@@ -18,17 +18,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-<<<<<<< HEAD
       - name: Checkout test
-=======
-<<<<<<< HEAD
-      - uses: actions/checkout@v2
-        with:
-          ref: testbranch
-      - uses: actions/setup-python@v2
-=======
-      - name: Checkout testbranch
->>>>>>> master
         id: chktestbranch
         uses: actions/checkout@v2
         with:
@@ -36,7 +26,6 @@ jobs:
       - name: Setup Python
         id: setuppython
         uses: actions/setup-python@v2
->>>>>>> testbranch
         with:
          python-version: '3.8'
       - name: dbt-run
