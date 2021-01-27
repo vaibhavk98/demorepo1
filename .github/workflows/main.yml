@@ -22,7 +22,7 @@ jobs:
         id: chktestbranch
         uses: actions/checkout@v2
         with:
-          ref: test
+          ref: testbranch
       - name: Setup Python
         id: setuppython
         uses: actions/setup-python@v2
