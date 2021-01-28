@@ -47,7 +47,7 @@ jobs:
         uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
-          args: -s recursive -X subtree=dist master
+          args: subtree=dist master
           target_branch: master
           github_token: ${{ github.token }}
 
