@@ -53,4 +53,4 @@ jobs:
         run: git checkout testbranch
       - name: Merge branch if test is successful
         if: success()
-        run: git merge --no-ff -s recursive -X subtree=TESTDATA master
+        run: git merge --no-ff -s recursive -X subtree=TESTDATA master --allow-unrelated-histories
