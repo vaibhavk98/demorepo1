@@ -44,10 +44,10 @@ jobs:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
       - name: Merge branch if test is successful
         if: success()
-        run: git checkout master
+        run: git fetch --all
       - name: Merge branch if test is successful
         if: success()
-        run: git fetch origin
+        run: git checkout master
       - name: Merge branch if test is successful
         if: success()
         run: git checkout testbranch
