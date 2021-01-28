@@ -47,4 +47,3 @@ jobs:
         uses: srt32/git-actions@v0.0.3
         with:
           args: git merge -s recursive -X subtree=dist master
-          github_token: ${{ github.token }}
