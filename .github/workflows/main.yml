@@ -47,6 +47,6 @@ jobs:
         uses: fnkr/github-action-git-bash@v1
         with:
           type: now
-          args: subtree=dist master
+          args: git merge --no-ff -s recursive -X subtree=dist master
           target_branch: master
           github_token: ${{ github.token }}
