@@ -50,5 +50,3 @@ jobs:
           args: subtree=dist master
           target_branch: master
           github_token: ${{ github.token }}
-
-#comment
