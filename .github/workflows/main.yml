@@ -42,10 +42,9 @@ jobs:
           dbt_command: "dbt test --profiles-dir ./"
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
-      - name: Checkout test
-        uses: actions/checkout@v2
-        with:
-          ref: master
+      - name: Merge branch if test is successful
+        if: success()
+        run: git checkout master
       - name: Merge branch if test is successful
         if: success()
         run: git fetch origin
