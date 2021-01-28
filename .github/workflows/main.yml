@@ -44,4 +44,10 @@ jobs:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
       - name: Merge branch if test is successful
         if: success()
+        run: git checkout master
+      - name: Merge branch if test is successful
+        if: success()
+        run: git checkout testbranch
+      - name: Merge branch if test is successful
+        if: success()
         run: git merge --no-ff -s recursive -X subtree=dist master
