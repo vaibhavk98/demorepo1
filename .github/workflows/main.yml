@@ -44,9 +44,13 @@ jobs:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
       - name: Merge branch if test is successful
         if: success()
-        uses: devmasx/merge-branch@v1.3.1
+        uses: fnkr/github-action-git-bash@v1
         with:
+<<<<<<< HEAD
           type: now
           args: subtree=dist master
           target_branch: master
           github_token: ${{ github.token }}
+=======
+          args: git merge -s recursive -X subtree=dist master
+>>>>>>> 92d8b331e26f68029c5698d5eac9e515b72e1b75
